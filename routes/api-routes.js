@@ -31,19 +31,18 @@ router.post("/api/workouts", ({ body }, res) => {
   console.log(body)
   const workout = new db.Workout(); 
   db.Workout.create(workout)
-    .then((dbWorkout => {
+    .then(dbWorkout => {
       console.log(dbWorkout); 
       res.json(dbWorkout)
      })
     .catch(err=> {
       res.json(err); 
     })
-  )
 })
 
 router.put("/api/workouts/:id", ( {body, params}, res) => {
- // console.log(req.body); 
- // console.log(req.params.id); 
+ console.log(params); 
+ console.log(body); 
  var query = { _id: params.id }
   console.log('add exercise button is cicked')
   db.Workout.findOneAndUpdate(query, 
