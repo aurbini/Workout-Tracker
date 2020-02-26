@@ -17,7 +17,14 @@ const newWorkout = document.querySelector(".new-workout")
 let workoutType = null;
 let shouldNavigateAway = false;
 
+
+
 init();
+
+
+
+
+
 
 async function init() {
   let workout; 
