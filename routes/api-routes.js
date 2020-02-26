@@ -27,8 +27,8 @@ router.get("/api/workouts/range", (req, res) => {
 
 
 router.post("/api/workouts", ({ body }, res) => {
-  console.log('complete exercise clicked')
-  console.log(body)
+  // console.log('complete exercise clicked')
+  // console.log(body)
   const workout = new db.Workout(); 
   db.Workout.create(workout)
     .then(dbWorkout => {

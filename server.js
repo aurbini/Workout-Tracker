@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -15,8 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
+const mongoURI = process.env.MONGODB_URI || "mongodb://localhost/workoutdb"
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true });
+mongoose.connect(mongoURI, { useNewUrlParser: true });
 
 
 app.use(routes.html); 
@@ -30,4 +32,4 @@ app.listen(PORT, () => {
 
 
 
-![MongoDB_URI](images/MONGODB_URI.png)
+// ![MongoDB_URI](images/MONGODB_URI.png)
